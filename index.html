@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Landing Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 10px;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            bottom: 0;
+            width: 100%;
+        }
+
+        img {
+            max-width: 33%;
+            height: auto;
+        }
+        #image-slider {
+            overflow: hidden;
+            position: relative;
+            height: 300px;
+            width: 700vh;
+        }
+
+        #image-slider img {
+            width: 100%;
+            height: auto;
+            display: none;
+            object-fit: cover;
+
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#features">Features</a>
+        <a href="#about">About Us</a>
+        <a href="#login">Login</a>
+    </nav>
+    <div id="image-slider" class="slide">
+        <img src="/image.png" alt="Image 1">
+        <img src="/1_O9pYXOq8roaoJsVzBdH_OQ.jpg" alt="Image 2">
+        <img src="/github-on-the-hunt-for-a-new-diversity-lead-developers-techworld-github-universe-png-800_450.png" alt="Image 3">
+    </div>
+
+    <section id="benefits-of-github">
+        <h2>Benefits of GitHub</h2>
+        <p>GitHub offers several benefits, including:</p>
+        <ul>
+            <li>Version Control</li>
+            <li>Collaboration</li>
+            <li>Code Hosting</li>
+            <!-- Add more benefits as needed -->
+        </ul>
+    </section>
+
+    <section id="basic-commands">
+        <h2>Basic Commands</h2>
+        <p>Here are some basic Git commands:</p>
+        <pre>
+            git init
+            git add .
+            git commit -m "Initial commit"
+            git push origin master
+            git add file_name
+            git pull origin branch_name
+            <!-- Add more commands as needed -->
+        </pre>
+    </section>
+
+    <section id="push-project">
+        <h2>How to Push Your Project to GitHub</h2>
+        <p>Follow these steps to push your project to GitHub:</p>
+        <ol>
+            <li>Create a new repository on GitHub.</li>
+            <li>Initialize a Git repository locally using <code>git init</code>.</li>
+            <li>Add and commit your files using <code>git add</code> and <code>git commit</code>.</li>
+            <li>Set the remote repository using <code>git remote add origin [repository URL]</code>.</li>
+            <li>Push your changes to GitHub with <code>git push origin master</code>.</li>
+        </ol>
+        <!-- Add more pages as needed -->
+    </section>
+    <section id="images">
+        <img src="/image1.png" alt="">
+        <img src="/image2.png" alt="">
+        <img src="/image3.png" alt="">
+
+    </section>
+
+
+    <footer>
+        <p>Copyright © 2023 GitHub Landing Page</p>
+    </footer>
+
+</body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const imageSlider = document.getElementById("image-slider");
+        const images = imageSlider.querySelectorAll("img");
+        let currentImageIndex = 0;
+
+        function showNextImage() {
+            images.forEach(img => (img.style.display = "none"));
+
+            images[currentImageIndex].style.display = "block";
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+
+            setTimeout(showNextImage, 5000); // Show next image after 5 seconds
+        }
+
+        showNextImage(); // Initial call to start the sequence
+    });
+</script>
+</html>
